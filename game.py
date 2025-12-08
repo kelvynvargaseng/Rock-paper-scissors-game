@@ -7,9 +7,7 @@ root.title("Rock Paper Scissors")
 root.geometry("900x600")
 root.resizable(False, False)
 
-# -------------------------------------------------------------
 # LOAD GIF FRAMES
-# -------------------------------------------------------------
 def load_gif_frames(path, size=(280, 280)):
     gif = Image.open(path)
     frames = []
@@ -22,9 +20,7 @@ gif1_frames = load_gif_frames("Rock Paper Scissors GIF (1).gif")
 gif2_frames = load_gif_frames("Rock Paper Scissors GIF.gif")
 gif3_frames = load_gif_frames("Sign Language Rock GIF.gif")
 
-# -------------------------------------------------------------
 # CANVAS
-# -------------------------------------------------------------
 canvas = tk.Canvas(root, width=900, height=600, highlightthickness=0, bg="black")
 canvas.pack(fill="both", expand=True)
 
@@ -33,9 +29,7 @@ gif1 = canvas.create_image(200, 300, image=gif1_frames[0])
 gif2 = canvas.create_image(450, 300, image=gif2_frames[0])
 gif3 = canvas.create_image(700, 300, image=gif3_frames[0])
 
-# -------------------------------------------------------------
 # GAME VARIABLES
-# -------------------------------------------------------------
 game_mode = None
 p1_choice = None
 player_score = 0
@@ -49,33 +43,25 @@ current_round = 0
 player_streak = 0
 computer_streak = 0
 
-# -------------------------------------------------------------
 # RAINBOW COLORS
-# -------------------------------------------------------------
 rainbow_colors = [
     "#FF0000", "#FF7F00", "#FFFF00",
     "#00FF00", "#0000FF", "#4B0082", "#9400D3"
 ]
 rainbow_index = 0
 
-# -------------------------------------------------------------
 # CANVAS TEXT ITEMS
-# -------------------------------------------------------------
 result_text = canvas.create_text(450, 40, text="", fill="white", font=("Arial", 26, "bold"))
 score_text = canvas.create_text(450, 95, text="", fill="white", font=("Arial", 20))
 menu_text = canvas.create_text(450, 500, text="", fill="white", font=("Arial", 22, "bold"))
 timer_text = canvas.create_text(450, 150, text="", fill="white", font=("Arial", 22, "bold"))
 
-# -------------------------------------------------------------
 # BUTTON IMAGES
-# -------------------------------------------------------------
 rock_img = ImageTk.PhotoImage(Image.open("rock.png").resize((100, 100)))
 paper_img = ImageTk.PhotoImage(Image.open("paper.png").resize((100, 100)))
 scissors_img = ImageTk.PhotoImage(Image.open("scissors.png").resize((100, 100)))
 
-# -------------------------------------------------------------
 # BUTTONS
-# -------------------------------------------------------------
 rock_btn = tk.Button(root, image=rock_img, bd=0, command=lambda: choose("rock"))
 paper_btn = tk.Button(root, image=paper_img, bd=0, command=lambda: choose("paper"))
 scissors_btn = tk.Button(root, image=scissors_img, bd=0, command=lambda: choose("scissors"))
@@ -85,9 +71,7 @@ single_btn = tk.Button(root, text="Single Player", font=("Arial", 20, "bold"), c
 multi_btn = tk.Button(root, text="Multiplayer", font=("Arial", 20, "bold"), command=lambda: get_names("multi"))
 all_buttons = [single_btn, multi_btn, rock_btn, paper_btn, scissors_btn, reset_btn, menu_btn]
 
-# -------------------------------------------------------------
 # ANIMATE GIFS
-# -------------------------------------------------------------
 frame_index = 0
 def animate_gifs():
     global frame_index
@@ -98,9 +82,7 @@ def animate_gifs():
     root.after(80, animate_gifs)
 animate_gifs()
 
-# -------------------------------------------------------------
 # LETTER-BY-LETTER RAINBOW ANIMATION
-# -------------------------------------------------------------
 def animate_colors():
     global rainbow_index
     rainbow_index = (rainbow_index + 1) % len(rainbow_colors)
@@ -113,9 +95,7 @@ def animate_colors():
     root.after(120, animate_colors)
 animate_colors()
 
-# -------------------------------------------------------------
 # SUBTLE BACKGROUND PARTICLES
-# -------------------------------------------------------------
 particles = []
 for _ in range(30):
     x, y = random.randint(0,900), random.randint(0,600)
@@ -138,9 +118,7 @@ def animate_particles():
     root.after(100, animate_particles)
 animate_particles()
 
-# -------------------------------------------------------------
 # CONFETTI ON WIN
-# -------------------------------------------------------------
 confetti_items = []
 
 def launch_confetti():
@@ -169,9 +147,7 @@ def animate_confetti():
     if confetti_items:
         root.after(50, animate_confetti)
 
-# -------------------------------------------------------------
 # TIMER
-# -------------------------------------------------------------
 timer_seconds = 10
 timer_id = None
 
@@ -198,16 +174,12 @@ def countdown():
             else:
                 choose(random.choice(["rock","paper","scissors"]))
 
-# -------------------------------------------------------------
 # TEXT UPDATE
-# -------------------------------------------------------------
 def update_text(result="", score=""):
     canvas.itemconfig(result_text, text=result)
     canvas.itemconfig(score_text, text=score)
 
-# -------------------------------------------------------------
 # NAME POPUP + BEST-OF-N
-# -------------------------------------------------------------
 active_popups = []
 
 def get_names(mode):
@@ -255,9 +227,7 @@ def get_names(mode):
                            command=submit_names, bg="black", fg="white")
     submit_btn.pack(pady=10)
 
-# -------------------------------------------------------------
 # GAMEPLAY FUNCTIONS
-# -------------------------------------------------------------
 def play_single(choice):
     global player_score, computer_score, player_streak, computer_streak, current_round
     if timer_id: root.after_cancel(timer_id)
@@ -321,17 +291,13 @@ def check_best_of_n():
             update_text(f"GAME OVER! {winner} wins!", f"Final Score → {player1_name}:{p1_score} {player2_name}:{p2_score}")
             hide_all_buttons()
 
-# -------------------------------------------------------------
 # CHOICE ROUTER
-# -------------------------------------------------------------
 def choose(choice):
     if timer_id: root.after_cancel(timer_id)
     if game_mode=="single": play_single(choice)
     elif game_mode=="multi": play_multiplayer(choice)
 
-# -------------------------------------------------------------
 # RESET + MENU
-# -------------------------------------------------------------
 def reset_game():
     global player_score, computer_score, p1_score, p2_score, p1_choice
     player_score = computer_score = p1_score = p2_score = 0
@@ -342,9 +308,7 @@ def reset_game():
 def go_menu():
     show_menu()
 
-# -------------------------------------------------------------
 # SHOW / HIDE BUTTONS
-# -------------------------------------------------------------
 def hide_all_buttons():
     canvas.delete("btn")
 
@@ -366,9 +330,7 @@ def start_game(mode):
     canvas.create_window(820,40,window=reset_btn,tags="btn")
     canvas.create_window(820,85,window=menu_btn,tags="btn")
     start_timer()
-
-# -------------------------------------------------------------
 # START
-# -------------------------------------------------------------
 show_menu()
 root.mainloop()
+
