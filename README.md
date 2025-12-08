@@ -1,16 +1,44 @@
-# Rock-paper-scissors-game
-Essentially this is just a text based game, maybe with visual representations, Rock, Paper, Scissors where the user plays against the computer or another person, with scorekeeping and being able to replay multiple rounds.
+#  Rock Paper Scissors
+ Kelvyn Vargas, 2025  
+ Project Overview
+ This is an interactive **Rock-Paper-Scissors** game
+# Just Rock Paper Scissors
 
-The program will allow the user to play Rock, Paper, Scissors against the computer or another person. The user will input their choice of “rock,” “paper,” or “scissors,” and the computer will randomly select its choice using the Random module. The program will look at the two choices, determine the winner, and display the results. It will also keep track of scores and allow the user to play multiple rounds until they choose to quit. Other things will probably be added as I go.
+Author: Kelvyn Vargas, 2025
 
-In a sentence (or list of features), define a GOOD outcome for your final project. I.e., what WILL you accomplish no matter what?
-The game correctly accepts user input, randomly generates the computer’s choice, determines the winner for each round, and displays the results, i just need to find a way to alternate between random computer choices and human input.
+## About the Game
+This is a fun Rock-Paper-Scissors game made with Python and Tkinter. You can play against the computer or with a friend. Everything on the screen is colorful and animated to make it more fun.
 
-In a sentence (or list of features), define a BETTER outcome for your final project. I.e., what do you THINK you can accomplish before the final project's deadline?
-The program will track scores across multiple rounds, allow the user to play multiple games, and include input validation to prevent crashes from invalid input.
+Here’s what it can do:
 
-In a sentence (or list of features), define a BEST outcome for your final project. I.e., what do you HOPE to accomplish before the final project's deadline?
-The program will include art or a basic GUI to make the game more visually appealing and interactive.
+- Single-player and multiplayer modes  
+- Rainbow animated text for scores, results, and menus  
+- Animated GIFs on the screen for cool visuals  
+- Countdown timer for each round so you have to pick fast  
+- Best-of-N rounds so you can decide how many rounds to play  
+- Confetti effect when someone wins a round  
+- Enter your name so the game feels personal  
+- Score tracking for all players  
+- Background animations for a lively look  
 
-In a paragraph or more, outline your next steps. What new skills will you need to acquire? What topics will you need to research? If working with one of two classmates, who will do what?
-Next, I will take the user's input and generate random numbers with Random. I will practice loops to allow replaying rounds and conditionals to determine the winner. I may also research how to implement ASCII art or a simple GUI using Swing for visual enhancements. I am working individually.
+## How to Play / Run
+
+1. Make sure Python 3.x is installed.  
+2. Put all images (rock, paper, scissors, GIFs) in the same folder as game.py.  
+3. Run the game by opening a terminal or command prompt and typing:
+
+python game.py
+
+4. Enter your name, pick your mode (single or multiplayer), and start playing.
+
+## Challenges & What I Learned
+
+- Getting the countdown timer to work for each round  
+- Making confetti appear only when someone wins  
+- Animating rainbow text and buttons  
+- Handling turns in multiplayer mode  
+- Learned a lot about Tkinter, animations, and making a game fun to play
+
+## Video
+I will add a video demo later.
+
