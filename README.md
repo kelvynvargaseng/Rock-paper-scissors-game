@@ -2,9 +2,6 @@
  Kelvyn Vargas, 2025  
  Project Overview
  This is an interactive **Rock-Paper-Scissors** game
-#  Rock Paper Scissors
-
-Author: Kelvyn Vargas, 2025
 
 ## About the Game
 This is a fun Rock-Paper-Scissors game made with Python and Tkinter. You can play against the computer or with a friend. Everything on the screen is colorful and animated to make it more fun.
