@@ -2,7 +2,7 @@
  Kelvyn Vargas, 2025  
  Project Overview
  This is an interactive **Rock-Paper-Scissors** game
-# Just Rock Paper Scissors
+#  Rock Paper Scissors
 
 Author: Kelvyn Vargas, 2025
 
