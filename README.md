@@ -40,5 +40,4 @@ python game.py
 - Learned a lot about Tkinter, animations, and making a game fun to play
 
 ## Video
-I will add a video demo later.
-
+https://www.youtube.com/watch?v=X14C7A0WfY4
